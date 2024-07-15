@@ -174,7 +174,7 @@
             }
         }
 
-        #card_data {
+        .card_data {
             flex-direction: column;
             gap: 8px;
 
@@ -258,7 +258,7 @@
 
     .cards {
         height: 160px;
-        #card_data {
+        .card_data {
             flex-direction: row !important;
             justify-content: space-between;
             align-items: center;
