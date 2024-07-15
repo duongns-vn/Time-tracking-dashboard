@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time tracking dashboard</title>
+</head>
+<body>
+    <div id="main" role="main">
+        <div id="app_container">
+
+            <div id="person">
+                <div class="person_info">
+                    <img class="avatar" src="./images/image-jeremy.png" alt="avatar">
+                    <div class="name_wrapper">
+                        <p>Report for</p>
+                        <h2>Jeremy Robson</h2>
+                    </div>
+                </div>
+
+                <div class="period">
+                    <button data-timeframe="daily">Daily</button>
+                    <button data-timeframe="weekly">Weekly</button>
+                    <button data-timeframe="monthly">Monthly</button>
+                </div>
+            </div>
+
+            <div id="work" class="cards">
+                <img src="./images/icon-work.svg" alt="icon">
+                <div class="card_info">
+                    <div class="card_name">
+                        <p>Work</p>
+                        <img src="./images/icon-ellipsis.svg" alt="icon">
+                    </div>
+
+                    <div id="card_data">
+                        <p class="current"></p>
+                        <div class="previous_data">
+                            <p class="previous-day"></p>
+                            <p class="previous"></p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div id="play" class="cards">
+                <img src="./images/icon-play.svg" alt="icon">
+                <div class="card_info">
+                    <div class="card_name">
+                        <p>Play</p>
+                        <img src="./images/icon-ellipsis.svg" alt="icon">
+                    </div>
+
+                    <div id="card_data">
+                        <p class="current"></p>
+                        <div class="previous_data">
+                            <p class="previous-day"></p>
+                            <p class="previous"></p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div id="study" class="cards">
+                <img src="./images/icon-study.svg" alt="icon">
+                <div class="card_info">
+                    <div class="card_name">
+                        <p>Study</p>
+                        <img src="./images/icon-ellipsis.svg" alt="icon">
+                    </div>
+
+                    <div id="card_data">
+                        <p class="current"></p>
+                        <div class="previous_data">
+                            <p class="previous-day"></p>
+                            <p class="previous"></p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div id="exercise" class="cards">
+                <img src="./images/icon-exercise.svg" alt="icon">
+                <div class="card_info">
+                    <div class="card_name">
+                        <p>Exercise</p>
+                        <img src="./images/icon-ellipsis.svg" alt="icon">
+                    </div>
+
+                    <div id="card_data">
+                        <p class="current"></p>
+                        <div class="previous_data">
+                            <p class="previous-day"></p>
+                            <p class="previous"></p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div id="social" class="cards">
+                <img src="./images/icon-social.svg" alt="icon">
+                <div class="card_info">
+                    <div class="card_name">
+                        <p>Social</p>
+                        <img src="./images/icon-ellipsis.svg" alt="icon">
+                    </div>
+
+                    <div id="card_data">
+                        <p class="current"></p>
+                        <div class="previous_data">
+                            <p class="previous-day"></p>
+                            <p class="previous"></p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div id="self-care" class="cards">
+                <img src="./images/icon-self-care.svg" alt="icon">
+                <div class="card_info">
+                    <div class="card_name">
+                        <p>Self Care</p>
+                        <img src="./images/icon-ellipsis.svg" alt="icon">
+                    </div>
+
+                    <div id="card_data">
+                        <p class="current"></p>
+                        <div class="previous_data">
+                            <p class="previous-day"></p>
+                            <p class="previous"></p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Author Info -->
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://github.com/duongns-vn">DuongNs</a>.
+        </div>
+
+    </div>
+
+
+
+
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./main.js"></script>
+</body>
+</html>

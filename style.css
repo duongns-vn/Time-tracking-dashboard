@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"');
+
+:root {
+    --Blue: #5847EB;
+    --Dark-Blue: #1C1F4A;
+    --Desaturated-blue: #6F76C8;
+    --Light-Red-Study: #FF5C7C;
+    --Light-Red: #FF8C66;
+    --Lime-Green: #4ACF81;
+    --Pale-Blue: #BDC1FF;
+    --Soft-Blue: #56C2E6;
+    --Soft-Orange: #F1C65B;
+    --Very-Dark-Blue: #0F1424;
+    --Violet: #7536D3;
+    --White: #FFFFFF;
+}
+
+* {
+    font-family: "Rubik";
+    font-size: 18px;
+    color: var(--White);
+    margin: 0;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-Dark-Blue);
+    height: 100vh;
+}
+
+#app_container {
+    width: 100%;
+    max-width: 1110px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    >div {
+        border-radius: 20px;
+        max-width: 255px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+#person {
+    grid-row: span 2;
+    height: 100%;
+    background-color: var(--Dark-Blue);
+    justify-content: space-between;
+
+    .person_info {
+        padding: 36px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 354px;
+        gap: 24px;
+        background-color: var(--Blue);
+        border-radius: 20px;
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--White);
+            border-radius: 50%;
+        }
+        .name_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            p {
+                font-size: 15px;
+                color: var(--Pale-Blue);
+            }
+
+            h2 {
+                font-size: 40px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .period {
+        padding: 0px 30px 36px 30px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        button {
+            color: var(--Pale-Blue);
+            cursor: pointer;
+            background: none;
+            padding: 0;
+            border: none;
+
+            &:hover {
+                color: var(--White);
+            }
+        }
+
+        .active {
+            color: var(--White);
+        }
+    }
+} 
+
+.cards {
+    grid-column: span 1;
+    position: relative;
+    height: 245px;
+    overflow: hidden;
+    justify-content: flex-end;
+
+    >img {
+        position: absolute;
+        right: 11px;
+        top: -15px;
+        width: 80px;
+        height: auto;
+    }
+    
+    &:nth-child(2) {
+        background-color: var(--Light-Red);
+    }
+    &:nth-child(3) {
+        background-color: var(--Soft-Blue);
+    }
+    &:nth-child(4) {
+        background-color: var(--Light-Red-Study);
+    }
+    &:nth-child(5) {
+        background-color: var(--Lime-Green);
+    }
+    &:nth-child(6) {
+        background-color: var(--Violet);
+    }
+    &:nth-child(7) {
+        background-color: var(--Soft-Orange);
+    }
+
+    .card_info {
+        padding: 30px;
+        background-color: var(--Dark-Blue);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        z-index: 1;
+        box-shadow: 0px 5px 15px #1C1F4A;
+        border-radius: 20px 20px 0px 0px;
+        >div {
+            display: flex;
+        }
+
+        .card_name {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                
+                height: 5px;
+                width: 24px;
+            }
+        }
+
+        #card_data {
+            flex-direction: column;
+            gap: 8px;
+
+            .current {
+                font-size: 56px;
+                font-weight: 300;
+            }
+
+            .previous_data {
+                display: flex;
+                /* justify-content: space-between; */
+                gap: 3px;
+            }
+
+            .previous_data >* {
+                font-size: 15px;
+                color: var(--Pale-Blue);
+            }
+        }
+    }
+}
+
+
+.attribution {
+    position: absolute;
+    top: 0;
+    a:nth-child(1) {
+        color: var(--Light-Red-Study);
+    }
+    a:nth-child(2) {
+        color: var(--Soft-Blue);
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    #main {
+        height: 100%;
+        padding: 10vh 0;
+    }
+    #app_container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        gap: 24px;
+
+        >div {
+            max-width: 384px;
+        }
+    }
+
+    .current {
+        font-size: 32px !important;
+    }
+
+    #person {
+
+        .person_info {
+            flex-direction: row;
+            padding: 30px;
+            height: auto;
+
+            .avatar {
+                width: 70px;
+                height: 70px;
+            }
+            .name_wrapper {
+                gap: 4px;
+                h2 {
+                    font-size: 24px;
+                }
+            } 
+        }
+
+        .period {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 24px 30px;
+        }
+    }
+
+    .cards {
+        height: 160px;
+        #card_data {
+            flex-direction: row !important;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card_info {
+            gap: 8px
+        }
+    }
+}
+

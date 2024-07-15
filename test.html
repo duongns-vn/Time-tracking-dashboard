@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+        .data-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button data-timeframe="daily">Daily</button>
+    <button data-timeframe="weekly">Weekly</button>
+    <button data-timeframe="monthly">Monthly</button>
+    
+    <div id="social" class="data-container">
+        <h3>Social</h3>
+        <p class="current"></p>
+        <p class="previous"></p>
+    </div>
+    
+    <div id="self-care" class="data-container">
+        <h3>Self Care</h3>
+        <p class="current"></p>
+        <p class="previous"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dataUrl = 'data.json';
+
+            const fetchData = async () => {
+                try {
+                    const response = await fetch(dataUrl);
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return await response.json();
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                }
+            };
+
+            const displayData = (data, timeframe) => {
+                data.forEach(item => {
+                    const container = document.getElementById(item.title.toLowerCase().replace(' ', '-'));
+                    if (container) {
+                        container.querySelector('.current').textContent = `Current: ${item.timeframes[timeframe].current} hrs`;
+                        container.querySelector('.previous').textContent = `Previous: ${item.timeframes[timeframe].previous} hrs`;
+                    }
+                });
+            };
+
+            document.querySelectorAll('button[data-timeframe]').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const data = await fetchData();
+                    displayData(data, button.getAttribute('data-timeframe'));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
