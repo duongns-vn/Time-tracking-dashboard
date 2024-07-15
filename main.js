@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Update the label for the previous timeframe based on the selected timeframe
                 if(timeframe == 'daily') {
-                    container.querySelector('.previous-day').textContent = `Last day:`;
+                    container.querySelector('.previous-day').textContent = `Yesterday:`;
                 }
                 if(timeframe == 'weekly') {
                     container.querySelector('.previous-day').textContent = `Last week:`;
